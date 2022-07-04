@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { createServer } from 'miragejs';
 import { App } from './App';
 
@@ -16,16 +16,14 @@ createServer({
           category: 'Food',
           createdAt: new Date()
         }
-      ];
-    })
+      ]
+    });
   }
 });
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
